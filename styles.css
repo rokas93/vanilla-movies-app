@@ -1,0 +1,259 @@
+:root {
+    --unnamed-color-black: #383838;
+    --unnamed-color-grey: #D9D9D9;
+    --unmated-color-darkgrey: #323234A3;
+    --unnamed-color-white: #FFFFFF;
+    --unnamed-color-orange: #FF5C31;
+    --unnamed-color-orange-hovered: #ff5e31cb;
+}
+
+* {
+    text-decoration: none;
+}
+
+html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* margin: 0 auto;
+    max-width: 1800px; */
+    margin: 0;
+    height: 100vh;
+}
+
+header {
+    background-image: url(../ca-bd/img/header-background.png);
+    background-size: 100% 100%;
+}
+
+.navigation {
+    position: relative;
+    height: 10vh;
+    width: 50vw;
+}
+
+.navigation_items {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.navigation_items > ul > li {
+    list-style-type: none;
+    display: inline;
+}
+
+.navigation_items > ul > li > a {
+    color: var(--unmated-color-darkgrey);
+    font-family: Poppins;
+    margin: 0 15px;
+    transition: opacity .5s;
+    cursor: pointer;
+}
+
+.navigation_items > ul > li > a:hover {
+    opacity: .5;
+}
+
+.lang_button {
+    background-color: var(--unnamed-color-orange);
+    transition: opacity .5s;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 20px #0000002E;
+    color: var(--unnamed-color-white);
+    margin-left: 15px;
+    font-family: Poppins;
+    cursor: pointer;
+}
+
+.lang_button:hover {
+    opacity: .5;
+}
+
+.hero {
+    position: relative;
+    height: 90vh;
+    width: 50vw;
+}
+
+.hero_items {
+    position: absolute;
+    left: 20%;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 50vw;
+}
+
+.hero_heading {
+    font-family: Poppins;
+    font-size: 2.7em;
+    color: var(--unnamed-color-black);
+    margin-bottom: .2em;
+}
+
+.hero_paragraph {
+    font-family: Poppins;
+    font-size: 1.1em;
+    color: var(--unnamed-color-black);
+    margin: 0;
+}
+
+.hero_button {
+    background-color: var(--unnamed-color-orange);
+    transition: opacity .5s;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 32px;
+    box-shadow: 0px 2px 20px #0000002E;
+    color: var(--unnamed-color-white);
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: Poppins;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
+
+.hero_button:hover {
+    opacity: .5;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48vw;
+    height: 100vh;
+    background-image: url(../ca-bd/img/carusele.png);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    margin-right: 1%;
+    background-position-y: 100%;
+    animation: slideShowVertical 1800s ease 0s infinite normal none;
+}
+
+@keyframes slideShowVertical{
+    0% {
+        background-position:0 0
+    }
+    to {
+        background-position:0 -10000%
+    }
+}
+
+.about {
+    position: relative;
+    height: 100vh;
+    background: var(--unnamed-color-white);
+}
+
+.about_text {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80vw;
+}
+
+.about_heading {
+    font-family: Poppins;
+    font-size: 2.7em;
+    color: var(--unnamed-color-black);
+}
+
+.about_heading > span {
+    color: var(--unnamed-color-orange);
+}
+
+.about_paragraph {
+    font-family: Poppins;
+    font-size: 1.1em;
+    color: var(--unnamed-color-black);
+    border-left: 2px solid black;
+    border-color: var(--unnamed-color-grey);
+    padding-left: 1em;
+    text-align: justify;
+}
+
+.about_blocks {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    display: flex;
+}
+
+.about_blocks > div {
+    box-shadow: 0px 5px 14px #0000000F;
+    width: 25vw;
+    height: 40vh;
+    margin-right: 2.5vw;
+    text-align: center;
+}
+
+.about_blocks > div > h2 {
+    font-family: Poppins;
+    font-size: 1.5em;
+    color: var(--unnamed-color-black);
+    margin: 0;
+}
+
+.about_blocks > div > p {
+    font-family: Poppins;
+    font-size: .9em;
+    color: var(--unmated-color-darkgrey);
+    margin: 0 3em;
+}
+
+.about_blocks > div > img {
+    padding: 2.5em;
+}
+
+.footer {
+    position: relative;
+    height: 30vh;
+    background: #F0EFF1;
+}
+
+.footer_text {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer_text > h1 {
+    font-family: Poppins;
+    font-size: 2.7em;
+    color: var(--unnamed-color-orange);
+    margin: 0;
+}
+
+.footer_text > p {
+    font-family: Poppins;
+    color: var(--unnamed-color-black);
+}
+
+.footer_media {
+    position: absolute;
+    right: 9%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer_media > ul > li {
+    list-style-type: none;
+    display: inline;
+}
+
+.footer_media > ul > li > a {
+    margin-left: .8em;
+    transition: opacity .5s;
+}
+
+.footer_media > ul > li > a:hover {
+    opacity: 0.5;
+}
