@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    background-image: url(../ca-bd/img/header-background.png);
+    background: url(./img/header-background.png);
     background-size: 100% 100%;
     min-height: 100vh;
 }
@@ -45,12 +45,15 @@ header {
 .navigation li {
     list-style-type: none;
     display: inline-block;
+    margin-right: 15px;
+}
+
+.navigation li:last-child {
+    margin-right: 0;
 }
 
 .navigation a {
     color: var(--unmated-color-darkgrey);
-    font-family: Poppins;
-    margin-right: 15px;
     transition: opacity .5s;
     cursor: pointer;
 }
@@ -67,7 +70,6 @@ header {
     padding: 7px 15px;
     box-shadow: 0px 2px 20px #0000002E;
     color: var(--unnamed-color-white);
-    margin-left: 15px;
     cursor: pointer;
 }
 
@@ -113,7 +115,7 @@ header {
     right: 0;
     min-width: 50vw;
     min-height: 100vh;
-    background-image: url(../ca-bd/img/carusele.png);
+    background-image: url(./img/carusele.png);
     background-repeat: repeat-y;
     background-size: 100% auto;
     margin-right: 1%;
@@ -183,14 +185,13 @@ header {
 
 .footer {
     background: var(--unnamed-color-footergrey);
-    min-height: 25vh;
 }
 
 .footer_align {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 70px 0;
+    padding: 80px 0;
 }
 
 .footer_media {
@@ -208,16 +209,16 @@ header {
 }
 
 .footer_align li {
-    list-style-type: none;
-    display: inline;
-
-}
-
-.footer_align a {
-    margin-left: 10px;
+    list-style: none;
+    display: inline-block;
     transition: opacity .5s;
+    margin-right: 10px;
 }
 
-.footer_align a:hover {
+.footer_align li:last-child {
+    margin-right: 0;
+}
+
+.footer_align li:hover {
     opacity: 0.5;
 }
