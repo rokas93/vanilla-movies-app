@@ -4,13 +4,14 @@
     <title>movie.lt</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <nav class="navigation">
-            <div class="navigation_items">
+        <div class="container">
+            <nav class="navigation">
                 <a href="#">
                     <img src="img/logo.png" alt="movie.lt">
                 </a>
@@ -22,43 +23,41 @@
                         <a href="#">contact</a>
                     </li>
                     <li>
-                        <!-- <a href="#">eng</a> -->
                         <button class="lang_button">eng</button>
                     </li>
                 </ul>
-            </div>
-        </nav>
-        <div class="hero">
-            <div class="hero_items">
+            </nav>
+            <div class="hero">
                 <h1 class="hero_heading">Your movie night</h1>
                 <p class="hero_paragraph">Stop spending a lot of time choosing movie!<br>Just enjoy your moment!</p>
                 <button class="hero_button" type="button">Show me what I want</button>
             </div>
-        </div>
+        </div>    
         <div class="slider"></div>
     </header>
 
     <main>
         <div class="about" id="page_1">
-            <div class="about_text">
-                <h1 class="about_heading">About <span>us</span></h1>
+            <div class="container">
+                <h2 class="about_heading">About <span>us</span></h2>
                 <p class="about_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam rerum eaque, voluptas laudantium quia similique perferendis velit veritatis quas in, corrupti, quos nemo reprehenderit temporibus aperiam quidem necessitatibus! Itaque, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit laborum, nemo deserunt corporis nobis ea eos nostrum, libero ut minus animi voluptatibus laboriosam doloremque? In consequuntur quas facilis iusto fugiat?</p>
-            </div>
-            <div class="about_blocks">
-                <div class="about_simple">
-                    <img src="../ca-bd/img/popcorn.png" alt="popconr.png">
-                    <h2>Simple</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                </div>
-                <div class="about_fast">
-                    <img src="../ca-bd/img/fast-time.png" alt="fast-time.png">
-                    <h2>Fast</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
-                </div>
-                <div class="about_love">
-                    <img src="../ca-bd/img/balloons.png" alt="balloons.png">
-                    <h2>Love</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+
+                <div class="about_blocks">
+                    <div class="about_blocks_single">
+                        <img src="../ca-bd/img/popcorn.png" alt="popconr.png">
+                        <h3>Simple</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                    <div class="about_blocks_single">
+                        <img src="../ca-bd/img/fast-time.png" alt="fast-time.png">
+                        <h3>Fast</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
+                    <div class="about_blocks_single">
+                        <img src="../ca-bd/img/balloons.png" alt="balloons.png">
+                        <h3>Love</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,28 +65,30 @@
 
     <footer>
         <div class="footer">
-            <div class="footer_text">
-                <h1>Your movie night</h1>
-                <p>2021 © all right reserved</p>
-            </div>
-            <div class="footer_media">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="../ca-bd/img/twitter.png" alt="twitter.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../ca-bd/img/facebook.png" alt="facebook.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../ca-bd/img/instagram.png" alt="instagram.png">
-                        </a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="footer_text">
+                    <h2>Your movie night</h2>
+                    <p>2021 © all right reserved</p>
+                </div>
+                <div class="footer_media">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="../ca-bd/img/twitter.png" alt="twitter.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../ca-bd/img/facebook.png" alt="facebook.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../ca-bd/img/instagram.png" alt="instagram.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
