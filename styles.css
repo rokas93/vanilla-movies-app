@@ -6,6 +6,7 @@
     --unnamed-color-white: #FFFFFF;
     --unnamed-color-orange: #FF5C31;
     --unnamed-color-orange-hovered: #ff5e31cb;
+    --unnamed-color-pb-bg: #38383814;
 }
 
 * {
@@ -29,7 +30,7 @@ body {
     padding: 0 15px;
 }
 
-header {
+header, .quiz{
     background: url(./img/header-background.png);
     background-size: 100% 100%;
     min-height: 100vh;
@@ -39,26 +40,29 @@ header {
     display: flex;
     align-items: center;
     padding: 50px 0;
-
 }
 
-.navigation li {
+.navigation_right {
+    justify-content: space-between;
+}
+
+.nav_list {
     list-style-type: none;
     display: inline-block;
     margin-right: 15px;
 }
 
-.navigation li:last-child {
+.nav_list:last-child {
     margin-right: 0;
 }
 
-.navigation a {
+.nav_url {
     color: var(--unmated-color-darkgrey);
     transition: opacity .5s;
     cursor: pointer;
 }
 
-.navigation a:hover {
+.nav_url:hover {
     opacity: .5;
 }
 
@@ -91,7 +95,7 @@ header {
     margin: 0;
 }
 
-.hero_button {
+.hero_button, .quiz_button {
     background-color: var(--unnamed-color-orange);
     transition: opacity .5s;
     border: none;
@@ -144,7 +148,7 @@ header {
     margin: 0 0 14px 0;
 }
 
-.about_heading span {
+.about_heading_span {
     color: var(--unnamed-color-orange);
 }
 
@@ -161,23 +165,23 @@ header {
     display: flex;
 }
 
-.about_blocks .about_blocks_single {
+.about_blocks_single {
     box-shadow: 0px 5px 14px #0000000F;
     text-align: center;
     margin-right: 31px;
     padding: 36px 42px 48px 42px;
 }
 
-.about_blocks .about_blocks_single:last-child {
+.about_blocks_single:last-child {
     margin-right: 0;
 }
 
-.about_blocks_single h2 {
+.about_blocks_heading {
     font-size: 24px;
     margin: 36px 0 0 0;
 }
 
-.about_blocks_single p {
+.about_blocks_paragraph {
     font-size: 14px;
     color: var(--unmated-color-darkgrey);
     margin: 0;
@@ -194,31 +198,102 @@ header {
     padding: 80px 0;
 }
 
-.footer_media {
-    margin-top: 10px;
-}
-
-.footer h2 {
+.footer_heading {
     font-size: 42px;
     color: var(--unnamed-color-orange);
     margin: 0;
 }
 
-.footer p {
+.footer_paragraph {
     margin: 0;
 }
 
-.footer_align li {
+.footer_media_list {
     list-style: none;
     display: inline-block;
     transition: opacity .5s;
     margin-right: 10px;
 }
 
-.footer_align li:last-child {
+.footer_media_list:last-child {
     margin-right: 0;
 }
 
-.footer_align li:hover {
+.footer_media_list:hover {
     opacity: 0.5;
 }
+
+.quiz_heading {
+    font-size: 42px;
+}
+
+.quiz_block_paragraph {
+    font-size: 16px;
+    color: var(--unmated-color-darkgrey);
+    margin: 0;
+}
+
+.quiz_block_heading {
+    font-size: 22px;
+    color: var(--unnamed-color-orange);
+    font-weight: 500;
+}
+
+.quiz_block {
+    background: var(--unnamed-color-white);
+    border: 1px solid var(--unnamed-color-grey);
+    border-radius: 4px;
+    box-shadow: 0px 5px 16px #0000000F;
+    padding: 36px 82px 48px 82px;
+    margin: 0 150px;
+}
+
+.quiz {
+    min-height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+.quiz_block_list {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-columns: auto auto auto;
+    text-align: left;
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.quiz_block_check {
+    font: 16px/1 "LineAwesome";
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px 4.5px;
+    margin-right: 10px;
+    color: var(--unnamed-color-orange);
+    border-color: var(--unnamed-color-orange);
+}
+
+.quiz_button {
+    padding: 20px 80px 20px 80px;
+}
+
+.quiz_bar {
+    /* display: relative; */
+    padding: 10px 0;
+    margin: 0 150px;
+    margin-bottom: 30px;
+    border: 1px solid var(--unnamed-color-grey);
+    background: var(--unnamed-color-pb-bg);
+    border-radius: 14px;
+}
+
+/* .quiz_progress {
+    display: absolute;
+    padding: 10px 0;
+    margin: 0 150px;
+    margin-bottom: 30px;
+    border: 1px solid var(--unnamed-color-grey);
+    background: linear-gradient(270deg, #0BD67E 0%, #18B16E 100%) 0% 0% no-repeat padding-box;
+    border-radius: 14px;
+} */
