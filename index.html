@@ -12,17 +12,17 @@
     <header>
         <div class="container">
             <nav class="navigation">
-                <a href="#">
+                <a href="index.html">
                     <img src="./img/logo.png" alt="movie.lt">
                 </a>
                 <ul>
-                    <li>
-                    <a href="#page_1">about us</a>
+                    <li class="nav_list">
+                        <a href="#page_1" class="nav_url">about us</a>
                     </li>
-                    <li>
-                    <a href="#">contact</a>
+                    <li class="nav_list">
+                        <a href="#" class="nav_url">contact</a>
                     </li>
-                    <li>
+                    <li class="nav_list">
                         <button class="lang_button">eng</button>
                     </li>
                 </ul>
@@ -30,7 +30,7 @@
             <div class="hero">
                 <h1 class="hero_heading">Your movie night</h1>
                 <p class="hero_paragraph">Stop spending a lot of time choosing movie!<br>Just enjoy your moment!</p>
-                <button class="hero_button" type="button">Show me what I want</button>
+                <button class="hero_button" type="submit" onclick="document.location='quiz-1.html'">Show me what I want</button>
             </div>
         </div>    
         <div class="slider"></div>
@@ -39,24 +39,24 @@
     <main>
         <div class="about" id="page_1">
             <div class="container">
-                <h2 class="about_heading">About <span>us</span></h2>
+                <h2 class="about_heading">About <span class="about_heading_span">us</span></h2>
                 <p class="about_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam rerum eaque, voluptas laudantium quia similique perferendis velit veritatis quas in, corrupti, quos nemo reprehenderit temporibus aperiam quidem necessitatibus! Itaque, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit laborum, nemo deserunt corporis nobis ea eos nostrum, libero ut minus animi voluptatibus laboriosam doloremque? In consequuntur quas facilis iusto fugiat?</p>
 
                 <div class="about_blocks">
                     <div class="about_blocks_single">
                         <img src="./img/popcorn.png" alt="popconr.png">
-                        <h3>Simple</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                        <h3 class="about_blocks_heading">Simple</h2>
+                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
                     <div class="about_blocks_single">
                         <img src="./img/fast-time.png" alt="fast-time.png">
-                        <h3>Fast</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                        <h3 class="about_blocks_heading">Fast</h3>
+                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
                     <div class="about_blocks_single">
                         <img src="./img/balloons.png" alt="balloons.png">
-                        <h3>Love</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                        <h3 class="about_blocks_heading">Love</h3>
+                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
                 </div>
             </div>
@@ -67,21 +67,21 @@
         <div class="container">
             <div class="footer_align">
                 <div class="footer_text">
-                    <h2>Your movie night</h2>
-                    <p>2021 © all rights reserved</p>
+                    <h2 class="footer_heading">Your movie night</h2>
+                    <p class="footer_paragraph">2021 © all rights reserved</p>
                 </div>
                 <ul>
-                    <li>
+                    <li class="footer_media_list">
                         <a href="#">
                             <img src="./img/twitter.png" alt="twitter.png">
                         </a>
                     </li>
-                    <li>
+                    <li class="footer_media_list">
                         <a href="#">
                             <img src="./img/facebook.png" alt="facebook.png">
                         </a>
                     </li>
-                    <li>
+                    <li class="footer_media_list">
                         <a href="#">
                             <img src="./img/instagram.png" alt="instagram.png">
                         </a>
