@@ -331,14 +331,13 @@ header, .quiz{
 .quiz_grid_wraper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     cursor: pointer;
 }
 
 .quiz_answers {
     display: flex;
     align-items: center;
-    position: relative;
     background-color: var(--unnamed-color-white);
     border: 1px solid var(--unnamed-color-grey);
     border-radius: 4px;
@@ -348,7 +347,6 @@ header, .quiz{
 }
 
 .quiz_answers_label {
-    position: absolute;
     margin-left: 20px;
     font-size: 16px;
     cursor: pointer;
