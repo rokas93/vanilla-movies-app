@@ -36,7 +36,9 @@ function checkBoundary(){
     if(parseInt(quizSliderInner.style.left) > 0) {
         quizSliderInner.style.left = '0px';
     } else if (inner.right < outer.right) {
-        quizSliderInner.style.left = `-${inner.width - outer.width}px`;
+        quizSliderInner.style.left = `${outer.width - inner.width}px`;
         console.log(quizSliderInner.style.left);
+        console.log(outer.width);
+        console.log(inner.width);
     }
 }
