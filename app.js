@@ -47,12 +47,12 @@
 
 let flkty = new Flickity('.carousel');
 
-let nextButton = document.querySelector('.button_next');
+let nextButton = document.querySelector('.slider__buttons-next');
 nextButton.addEventListener( 'click', function() {
     flkty.next( true );
 });
 
-let previousButton = document.querySelector('.button_previous');
+let previousButton = document.querySelector('.slider__buttons-previous');
 previousButton.addEventListener( 'click', function() {
     flkty.previous( true );
 });

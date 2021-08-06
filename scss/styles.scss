@@ -13,7 +13,6 @@
 * {
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -21,8 +20,10 @@ html {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     color: var(--unnamed-color-black);
     margin: 0;
+    line-height: normal;
 }
 
 .container {
@@ -32,7 +33,7 @@ body {
 }
 
 header, .quiz {
-    background: url(./img/header-background.png);
+    background: url(../img/header-background.png);
     background-size: 100% 100%;
     min-height: 100vh;
 }
@@ -114,13 +115,13 @@ header, .quiz {
     }
 }
 
-.slider {
+.repeater {
     position: absolute;
     top: 0;
     right: 0;
     min-width: 50vw;
     min-height: 100vh;
-    background-image: url(./img/carusele.png);
+    background-image: url(../img/carusele.png);
     background-repeat: repeat-y;
     background-size: 100% auto;
     margin-right: 1%;
@@ -165,7 +166,7 @@ header, .quiz {
         display: flex;
     }
 
-    &__block-signle {
+    &__blocks-single {
         box-shadow: 0px 5px 14px #0000000F;
         text-align: center;
         margin-right: 31px;
@@ -176,17 +177,17 @@ header, .quiz {
         }
     }
 
-    &__block-single-img {
+    &__blocks-single-img {
         width: 86px;
         height: 86px;
     }
 
-    &__block-single-heading {
+    &__blocks-single-heading {
         font-size: 24px;
         margin: 36px 0 0 0;
     }
 
-    &__block-single-paragraph {
+    &__blocks-single-paragraph {
         font-size: 14px;
         color: var(--unmated-color-darkgrey);
         margin: 0;
@@ -425,12 +426,12 @@ header, .quiz {
             border-color: var(--unnamed-color-orange);
         }
 
-        &:hover &__form-block-answer-checkbox ~ &__form-block-answer-checkmark {
+        &:hover &-checkbox ~ &-checkmark {
             color: var(--unnamed-color-grey);
             transition: color .5s;
         }
 
-        & &__form-block-answer-checkbox:checked ~ &__form-block-answer-checkmark {
+        & &-checkbox:checked ~ &-checkmark {
             background-color: var(--unnamed-color-orange);
             border: var(--unnamed-color-orange);
             color: var(--unnamed-color-white);
@@ -456,6 +457,50 @@ header, .quiz {
         color: var(--unnamed-color-trans);
         text-align: center;
         font-weight: bold;
+    }
+
+    &__form-button {
+        background-color: var(--unnamed-color-orange);
+        transition: opacity .5s;
+        border: none;
+        border-radius: 4px;
+        padding: 20px 80px 20px 80px;
+        box-shadow: 0px 2px 20px #0000002E;
+        color: var(--unnamed-color-white);
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 24px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    &__results {
+        max-width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+
+    &__results-bar {
+        height: 20px;
+        margin-bottom: 30px;
+        border: 1px solid var(--unnamed-color-grey);
+        background: var(--unnamed-color-pb-bg);
+        border-radius: 14px;
+    }
+
+    &__results-bar-progress {
+        height: 18px;
+        width: 20%;
+        background: linear-gradient(270deg, #0BD67E, #18B16E);
+        border-radius: 14px;
+    }
+
+    &__results-heading {
+        margin-top: 0;
+        font-size: 42px;
     }
 }
 
@@ -551,6 +596,8 @@ header, .quiz {
         padding: 6px;
         transform: rotate(-45deg);
         transition: opacity .5s;
+        background: none;
+        cursor: pointer;
 
         &:hover {
             opacity: 0.5;

@@ -4,8 +4,9 @@
     <title>movie.lt</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
@@ -16,47 +17,47 @@
                     <img src="./img/logo.png" alt="movie.lt">
                 </a>
                 <ul>
-                    <li class="nav_list">
-                        <a href="#page_1" class="nav_url">about us</a>
+                    <li class="navigation__list">
+                        <a href="#page_1" class="navigation__url">about us</a>
                     </li>
-                    <li class="nav_list">
-                        <a href="#" class="nav_url">contact</a>
+                    <li class="navigation__list">
+                        <a href="#" class="navigation__url">contact</a>
                     </li>
-                    <li class="nav_list">
-                        <button class="lang_button">eng</button>
+                    <li class="navigation__list">
+                        <button class="navigation__button">eng</button>
                     </li>
                 </ul>
             </nav>
             <div class="hero">
-                <h1 class="hero_heading">Your movie night</h1>
-                <p class="hero_paragraph">Stop spending a lot of time choosing movie!<br>Just enjoy your moment!</p>
-                <button class="hero_button" type="submit" onclick="document.location='quiz-1.html'">Show me what I want</button>
+                <h1 class="hero__heading">Your movie night</h1>
+                <p class="hero__paragraph">Stop spending a lot of time choosing movie!<br>Just enjoy your moment!</p>
+                <button class="hero__button" type="submit" onclick="document.location='quiz-1.html'">Show me what I want</button>
             </div>
         </div>    
-        <div class="slider"></div>
+        <div class="repeater"></div>
     </header>
 
     <main>
         <div class="about" id="page_1">
             <div class="container">
-                <h2 class="about_heading">About <span class="about_heading_span">us</span></h2>
-                <p class="about_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam rerum eaque, voluptas laudantium quia similique perferendis velit veritatis quas in, corrupti, quos nemo reprehenderit temporibus aperiam quidem necessitatibus! Itaque, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit laborum, nemo deserunt corporis nobis ea eos nostrum, libero ut minus animi voluptatibus laboriosam doloremque? In consequuntur quas facilis iusto fugiat?</p>
+                <h2 class="about__heading">About <span class="about__heading-span">us</span></h2>
+                <p class="about__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam rerum eaque, voluptas laudantium quia similique perferendis velit veritatis quas in, corrupti, quos nemo reprehenderit temporibus aperiam quidem necessitatibus! Itaque, in! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit laborum, nemo deserunt corporis nobis ea eos nostrum, libero ut minus animi voluptatibus laboriosam doloremque? In consequuntur quas facilis iusto fugiat?</p>
 
-                <div class="about_blocks">
-                    <div class="about_blocks_single">
-                        <img src="./img/popcorn.png" alt="popconr.png">
-                        <h3 class="about_blocks_heading">Simple</h2>
-                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                <div class="about__blocks">
+                    <div class="about__blocks-single">
+                        <img class="about__blocks-single-img" src="./img/popcorn.png" alt="popconr.png">
+                        <h3 class="about__blocks-single-heading">Simple</h2>
+                        <p class="about__blocks-single-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
-                    <div class="about_blocks_single">
-                        <img src="./img/fast-time.png" alt="fast-time.png">
-                        <h3 class="about_blocks_heading">Fast</h3>
-                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    <div class="about__blocks-single">
+                        <img class="about__blocks-single-img" src="./img/fast-time.png" alt="fast-time.png">
+                        <h3 class="about__blocks-single-heading">Fast</h3>
+                        <p class="about__blocks-single-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
-                    <div class="about_blocks_single">
-                        <img src="./img/balloons.png" alt="balloons.png">
-                        <h3 class="about_blocks_heading">Love</h3>
-                        <p class="about_blocks_paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
+                    <div class="about__blocks-single">
+                        <img class="about__blocks-single-img" src="./img/balloons.png" alt="balloons.png">
+                        <h3 class="about__blocks-single-heading">Love</h3>
+                        <p class="about__blocks-single-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</p>
                     </div>
                 </div>
             </div>
@@ -65,23 +66,23 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer_align">
-                <div class="footer_text">
-                    <h2 class="footer_heading">Your movie night</h2>
-                    <p class="footer_paragraph">2021 © all rights reserved</p>
+            <div class="footer__block">
+                <div>
+                    <h2 class="footer__block-heading">Your movie night</h2>
+                    <p class="footer__block-paragraph">2021 © all rights reserved</p>
                 </div>
                 <ul>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/twitter.png" alt="twitter.png">
                         </a>
                     </li>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/facebook.png" alt="facebook.png">
                         </a>
                     </li>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/instagram.png" alt="instagram.png">
                         </a>
@@ -93,6 +94,5 @@
 
     <script src="app.js"></script>
 
-</body>
 </body>
 </html>

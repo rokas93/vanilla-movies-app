@@ -4,155 +4,131 @@
     <title>movie.lt</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="./css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 
     <div class="quiz">
         <div class="container">
-            <nav class="navigation navigation_right">
-                <div class="nav_logo">
-                    <a href="index.html">
-                        <img src="./img/logo.png" alt="movie.lt">
-                    </a>
-                </div>
+            <nav class="navigation navigation__right">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="movie.lt">
+                </a>
                 <ul>
-                    <li class="nav_list">
-                        <a href="index.html" class="nav_url">back</a>
+                    <li class="navigation__list">
+                        <a href="index.html" class="navigation__url">back</a>
                     </li>
-                    <li class="nav_list">
-                        <button class="lang_button">eng</button>
+                    <li class="navigation__list">
+                        <button class="navigation__button">eng</button>
                     </li>
                 </ul>
             </nav>
-            <div class="quiz_wraper">
-                <h2 class="quiz_heading">Your picks today</h2>
-                <div class="quiz_bar">
-                    <div class="quiz_progress"></div>
+            <div class="quiz__results">
+                <h2 class="quiz__results-heading">Your picks today</h2>
+                <div class="quiz__results-bar">
+                    <div class="quiz__results-bar-progress"></div>
                 </div>
             </div>
         </div>
-        <div class="quiz_slider">
+        <div class="slider">
             <div class="carousel" data-flickity>
                 <div class="carousel-cell">
-                    <div class="carousel_bg"></div>
-                    <img class="carousel_img" src="./img/showshank.jpg" alt="showshank.jpg">
-                    <div class="quiz_slider_item">
-                        <h3 class="film_name">The Shawshank Redemption</h3>
-                        <span class="film_date">1994m.</span>
-                        <span class="film_duration">2h 22min.</span>
-                        <p class="film_rating">9.3 imdb</p>
-                        <p class="film_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
+                    <div class="slider__bg"></div>
+                    <img class="slider__img" src="./img/showshank.jpg" alt="showshank.jpg">
+                    <div class="slider__item">
+                        <h3 class="slider__item-film-name">The Shawshank Redemption</h3>
+                        <span class="slider__item-film-date">1994m.</span>
+                        <span class="slider__item-film-duration">2h 22min.</span>
+                        <p class="slider__item-film_rating">9.3 imdb</p>
+                        <p class="slider__item-film-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
                     </div>
                 </div>
                 <div class="carousel-cell">
-                    <div class="carousel_bg"></div>
-                    <img class="carousel_img" src="./img/godfather.jpg" alt="showshank.jpg">
-                    <div class="quiz_slider_item">
-                        <h3 class="film_name">The Godfather</h3>
-                        <span class="film_date">1972m.</span>
-                        <span class="film_duration">2h 55min.</span>
-                        <p class="film_rating">9.2 imdb</p>
-                        <p class="film_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
+                    <div class="slider__bg"></div>
+                    <img class="slider__img" src="./img/godfather.jpg" alt="showshank.jpg">
+                    <div class="slider__item">
+                        <h3 class="slider__item-film-name">The Godfather</h3>
+                        <span class="slider__item-film-date">1972m.</span>
+                        <span class="slider__item-film-duration">2h 55min.</span>
+                        <p class="slider__item-film_rating">9.2 imdb</p>
+                        <p class="slider__item-film-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
                     </div> 
                 </div>
                 <div class="carousel-cell">
-                    <div class="carousel_bg"></div>
-                    <img class="carousel_img" src="./img/knight.jpg" alt="showshank.jpg">
-                    <div class="quiz_slider_item">
-                        <h3 class="film_name">The Dark Knight</h3>
-                        <span class="film_date">2008m.</span>
-                        <span class="film_duration">2h 32min.</span>
-                        <p class="film_rating">9.0 imdb</p>
-                        <p class="film_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
+                    <div class="slider__bg"></div>
+                    <img class="slider__img" src="./img/knight.jpg" alt="showshank.jpg">
+                    <div class="slider__item">
+                        <h3 class="slider__item-film-name">The Dark Knight</h3>
+                        <span class="slider__item-film-date">2008m.</span>
+                        <span class="slider__item-film-duration">2h 32min.</span>
+                        <p class="slider__item-film_rating">9.0 imdb</p>
+                        <p class="slider__item-film-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
                     </div> 
                 </div>
                 <div class="carousel-cell">
-                    <div class="carousel_bg"></div>
-                    <img class="carousel_img" src="./img/12angry.jpg" alt="showshank.jpg">
-                    <div class="quiz_slider_item">
-                        <h3 class="film_name">12 Angry Men</h3>
-                        <span class="film_date">1957m.</span>
-                        <span class="film_duration">1h 36min.</span>
-                        <p class="film_rating">9.0 imdb</p>
-                        <p class="film_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
+                    <div class="slider__bg"></div>
+                    <img class="slider__img" src="./img/12angry.jpg" alt="showshank.jpg">
+                    <div class="slider__item">
+                        <h3 class="slider__item-film-name">12 Angry Men</h3>
+                        <span class="slider__item-film-date">1957m.</span>
+                        <span class="slider__item-film-duration">1h 36min.</span>
+                        <p class="slider__item-film_rating">9.0 imdb</p>
+                        <p class="slider__item-film-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
                     </div> 
                 </div>
                 <div class="carousel-cell">
-                    <div class="carousel_bg"></div>
-                    <img class="carousel_img" src="./img/ring.jpg" alt="showshank.jpg">
-                    <div class="quiz_slider_item">
-                        <h3 class="film_name">The Lord of the Rings: The Return of the King</h3>
-                        <span class="film_date">2003m.</span>
-                        <span class="film_duration">3h 21min.</span>
-                        <p class="film_rating">8.9 imdb</p>
-                        <p class="film_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
+                    <div class="slider__bg"></div>
+                    <img class="slider__img" src="./img/ring.jpg" alt="showshank.jpg">
+                    <div class="slider__item">
+                        <h3 class="slider__item-film-name">The Lord of the Rings: The Return of the King</h3>
+                        <span class="slider__item-film-date">2003m.</span>
+                        <span class="slider__item-film-duration">3h 21min.</span>
+                        <p class="slider__item-film_rating">8.9 imdb</p>
+                        <p class="slider__item-film-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusamus necessitatibus nisi a ex modi molestias libero.</p>
                     </div> 
                 </div>
             </div>
             <div class="container">
-                <div class="quiz_slider_buttons">
-                    <button class="button_previous"></button>
-                    <div class="quiz_slider_button">
-                        <button class="quiz_slider_button--finish">
-                            <p>Finish</p>
-                            <span>You save my night!</span>
+                <div class="slider__buttons">
+                    <button class="slider__buttons-previous"></button>
+                    <div class="slider__buttons-select">
+                        <button class="slider__buttons-select-finish" type="button">
+                            <p class="slider__buttons-select-finish-paragraph">Finish</p>
+                            <span class="slider__buttons-select-finish-span">You save my night!</span>
                         </button>
-                        <button class="quiz_slider_button--again">
-                            <p>Again</p>
-                            <span>I saw them all :(</span>
+                        <button class="slider__buttons-select-again" type="button">
+                            <p class="slider__buttons-select-again-paragraph">Again</p>
+                            <span class="slider__buttons-select-again-span">I saw them all :(</span>
                         </button>
                     </div>
-                    <button class="button_next"></button>
+                    <button class="slider__buttons-next"></button>
                 </div>
             </div>
         </div>
-
-
-        <!-- <div class="quiz_slider">
-            <div class="quiz_slider_inner">
-                <div class="quiz_result">1
-
-                </div>
-                <div class="quiz_result">2
-
-                </div>
-                <div class="quiz_result">3
-
-                </div>
-                <div class="quiz_result">4
-
-                </div>
-                <div class="quiz_result">5
-                    
-                </div>
-            </div>
-        </div> -->
-
-        
     </div>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer_align">
-                <div class="footer_text">
-                    <h2 class="footer_heading">Your movie night</h2>
-                    <p class="footer_paragraph">2021 © all rights reserved</p>
+            <div class="footer__block">
+                <div>
+                    <h2 class="footer__block-heading">Your movie night</h2>
+                    <p class="footer__block-paragraph">2021 © all rights reserved</p>
                 </div>
                 <ul>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/twitter.png" alt="twitter.png">
                         </a>
                     </li>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/facebook.png" alt="facebook.png">
                         </a>
                     </li>
-                    <li class="footer_media_list">
+                    <li class="footer__block-media">
                         <a href="#">
                             <img src="./img/instagram.png" alt="instagram.png">
                         </a>
@@ -165,6 +141,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="app.js"></script>
-</body>
+    
 </body>
 </html>
