@@ -282,10 +282,12 @@ header, .quiz {
 
 .quiz__information-bar-progress {
   height: 18px;
-  width: 20%;
+  width: 25%;
   background: -webkit-gradient(linear, right top, left top, from(#0BD67E), to(#18B16E));
   background: linear-gradient(270deg, #0BD67E, #18B16E);
   border-radius: 14px;
+  -webkit-animation: slide 1s ease-out;
+          animation: slide 1s ease-out;
 }
 
 .quiz__information-heading {
@@ -362,6 +364,7 @@ header, .quiz {
   max-width: 70%;
   margin: auto;
   text-align: center;
+  display: none;
 }
 
 .quiz__type-bar {
@@ -374,7 +377,7 @@ header, .quiz {
 
 .quiz__type-bar-progress {
   height: 18px;
-  width: 20%;
+  width: 50%;
   background: -webkit-gradient(linear, right top, left top, from(#0BD67E), to(#18B16E));
   background: linear-gradient(270deg, #0BD67E, #18B16E);
   border-radius: 14px;
@@ -427,6 +430,7 @@ header, .quiz {
   max-width: 70%;
   margin: auto;
   text-align: center;
+  display: none;
 }
 
 .quiz__form-bar {
@@ -439,7 +443,7 @@ header, .quiz {
 
 .quiz__form-bar-progress {
   height: 18px;
-  width: 20%;
+  width: 75%;
   background: -webkit-gradient(linear, right top, left top, from(#0BD67E), to(#18B16E));
   background: linear-gradient(270deg, #0BD67E, #18B16E);
   border-radius: 14px;
@@ -559,7 +563,7 @@ header, .quiz {
 
 .quiz__results-bar-progress {
   height: 18px;
-  width: 20%;
+  width: 100%;
   background: -webkit-gradient(linear, right top, left top, from(#0BD67E), to(#18B16E));
   background: linear-gradient(270deg, #0BD67E, #18B16E);
   border-radius: 14px;
