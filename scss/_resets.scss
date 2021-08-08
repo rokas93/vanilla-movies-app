@@ -1,4 +1,7 @@
 * {
-    text-decoration: none;
     box-sizing: border-box;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
 }

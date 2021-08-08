@@ -1,6 +1,4 @@
-@import './resets';
-@import './variables';
-@import './mixins';
+@import './resets', './variables', './mixins';
 
 html {
     scroll-behavior: smooth;
@@ -219,6 +217,7 @@ header, .quiz {
         max-width: 70%;
         margin: 0 auto;
         text-align: center;
+        padding: 20px 0px;
     }
 
     &__information-bar {
@@ -304,6 +303,7 @@ header, .quiz {
         max-width: 70%;
         margin: auto;
         text-align: center;
+        padding: 20px 0px;
         display: none;
         opacity: 0;
     }
@@ -346,6 +346,10 @@ header, .quiz {
         &:hover {
             border: 1px solid $color-orange;
         }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__type-select-img {
@@ -363,6 +367,7 @@ header, .quiz {
         max-width: 70%;
         margin: auto;
         text-align: center;
+        padding: 20px 0px;
         display: none;
         opacity: 0;
     }
@@ -468,6 +473,9 @@ header, .quiz {
         max-width: 70%;
         margin: auto;
         text-align: center;
+        padding-top: 20px;
+        display: none;
+        opacity: 0;
     }
 
     &__results-bar {
@@ -506,6 +514,9 @@ header, .quiz {
 }
 
 .slider {
+    display: none;
+    opacity: 0;
+
     &__bg {
         position: absolute;
         width: 100%;
