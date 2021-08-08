@@ -22,6 +22,16 @@ if (!link) {
 }
 link.href = './favicon.ico';
 
+// set progress
+function setBarProgress(selector, min, max) {
+    selector.animate([
+        {width: min},
+        {width: max}
+    ], 
+        {duration: 500}
+    );
+}
+
 // quiz form
 let startBtn = document.querySelector('.hero__button');
 if (startBtn) {
@@ -38,13 +48,7 @@ if (infoBtn) {
     infoBtn.addEventListener('click', function() {
         infoBlock.style.display = 'none';
         typeBlock.style.display = 'block';
-
-        typePb.animate([
-            {width: '25%'},
-            {width: '50%'}
-        ], 
-            {duration: 500}
-        );
+        setBarProgress(typePb, '25%', '50%');
     });
 }
 
@@ -55,13 +59,7 @@ if (selectFilmBtn) {
     selectFilmBtn.addEventListener('click', function() {
         typeBlock.style.display = 'none';
         formBlock.style.display = 'block';
-
-        formPb.animate([
-            {width: '50%'},
-            {width: '75%'}
-        ], 
-            {duration: 500}
-        );
+        setBarProgress(formPb, '50%', '75%');
     });
 }
 
@@ -70,13 +68,7 @@ if (selectTvBtn) {
     selectTvBtn.addEventListener('click', function () {
         typeBlock.style.display = 'none';
         formBlock.style.display = 'block';
-
-        formPb.animate([
-            {width: '50%'},
-            {width: '75%'}
-        ], 
-            {duration: 500}
-        );
+        setBarProgress(formPb, '50%', '75%');
     });
 }
 
@@ -90,23 +82,13 @@ if (selectGenreBtn) {
 // first (results) quiz page pb animation
 let infoPb = document.querySelector('.quiz__information-bar-progress');
 if (infoPb) {
-    infoPb.animate([
-        {width: '0%'},
-        {width: '25%'}
-    ], 
-        {duration: 500}
-    );
+    setBarProgress(infoPb, '0%', '25%');
 }
 
 // last (info) quiz page pb animation
 let resPb = document.querySelector('.quiz__results-bar-progress');
 if (resPb) {
-    resPb.animate([
-        {width: '75%'},
-        {width: '100%'}
-    ], 
-        {duration: 500}
-    );
+    setBarProgress(resPb, '75%', '100%');
 }
 
 let finishBtn = document.querySelector('.slider__buttons-select-finish');
