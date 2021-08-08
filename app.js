@@ -27,9 +27,21 @@ function setBarProgress(selector, min, max) {
     selector.animate([
         {width: min},
         {width: max}
-    ], 
-        {duration: 500},
-    );
+    ], {
+        duration: 500,
+        delay: 250,
+        fill: 'forwards'
+    });
+}
+
+// quiz form fade in
+function formTransition(selector) {
+    selector.animate([
+        {opacity: 1}, 
+    ], {
+        duration: 200,
+        fill: 'forwards'
+    });
 }
 
 // quiz form
@@ -47,6 +59,7 @@ let typePb = document.querySelector('.quiz__type-bar-progress');
 if (infoBtn) {
     infoBtn.addEventListener('click', function() {
         infoBlock.style.display = 'none';
+        formTransition(typeBlock);
         typeBlock.style.display = 'block';
         setBarProgress(typePb, '25%', '50%');
     });
@@ -58,6 +71,7 @@ let formPb = document.querySelector('.quiz__form-bar-progress');
 if (selectFilmBtn) {
     selectFilmBtn.addEventListener('click', function() {
         typeBlock.style.display = 'none';
+        formTransition(formBlock);
         formBlock.style.display = 'block';
         setBarProgress(formPb, '50%', '75%');
     });
@@ -67,6 +81,7 @@ let selectTvBtn = document.querySelector('#select-tv');
 if (selectTvBtn) {
     selectTvBtn.addEventListener('click', function () {
         typeBlock.style.display = 'none';
+        formTransition(formBlock);
         formBlock.style.display = 'block';
         setBarProgress(formPb, '50%', '75%');
     });
