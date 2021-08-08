@@ -28,7 +28,7 @@ function setBarProgress(selector, min, max) {
         {width: min},
         {width: max}
     ], 
-        {duration: 500}
+        {duration: 500},
     );
 }
 
