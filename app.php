@@ -13,7 +13,7 @@ try {
     echo $e->getMessage();
 }
 
-$query = $db->prepare("SELECT `Name` FROM `moviedb` WHERE `Type`='Film' AND `Genre`='Crime'");
+$query = $db->prepare("SELECT `Name`, `Type_ID`, `Genre_ID`, `Years`, `Time`, `Rating`, `Description`, `Background` FROM `moviedb`");
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_ASSOC);
 

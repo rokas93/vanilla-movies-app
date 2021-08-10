@@ -11,7 +11,7 @@ function setBarProgress(selector, min, max) {
 }
 
 // quiz form fade in
-function formTransition(selector) {
+function setFormTransition(selector) {
     selector.animate(
         {opacity: 1}, 
     {
@@ -47,7 +47,7 @@ if (quizPage) {
         typePb    = document.querySelector('.quiz__type-bar-progress');
     infoBtn.addEventListener('click', function() {
         infoBlock.style.display = 'none';
-        formTransition(typeBlock);
+        setFormTransition(typeBlock);
         typeBlock.style.display = 'block';
         setBarProgress(typePb, '25%', '50%');
     });
@@ -57,7 +57,7 @@ if (quizPage) {
         formPb        = document.querySelector('.quiz__form-bar-progress');
     selectFilmBtn.addEventListener('click', function() {
         typeBlock.style.display = 'none';
-        formTransition(formBlock);
+        setFormTransition(formBlock);
         formBlock.style.display = 'block';
         setBarProgress(formPb, '50%', '75%');
     });
@@ -65,7 +65,7 @@ if (quizPage) {
     let selectTvBtn = document.querySelector('#select-tv');
     selectTvBtn.addEventListener('click', function () {
         typeBlock.style.display = 'none';
-        formTransition(formBlock);
+        setFormTransition(formBlock);
         formBlock.style.display = 'block';
         setBarProgress(formPb, '50%', '75%');
     });
@@ -78,11 +78,11 @@ if (quizPage) {
         carouselFlkty  = new Flickity(carousel);
     selectGenreBtn.addEventListener('click', function () {
         formBlock.style.display = 'none';
-        formTransition(formBlock);
+        setFormTransition(formBlock);
         resultsBlock.style.display = 'block';
-        formTransition(resultsBlock);
+        setFormTransition(resultsBlock);
         slider.style.display = 'block';
-        formTransition(slider);
+        setFormTransition(slider);
         carouselFlkty.resize();
         setBarProgress(resPb, '75%', '100%');
     });
