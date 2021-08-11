@@ -1,4 +1,4 @@
-// set progress
+// Set progress.
 function setBarProgress(selector, min, max) {
     selector.animate([
         {width: min},
@@ -10,7 +10,7 @@ function setBarProgress(selector, min, max) {
     });
 }
 
-// quiz form fade in
+// Quiz form fade in.
 function setFormTransition(selector) {
     selector.animate(
         {opacity: 1}, 
@@ -30,16 +30,6 @@ if (mainPage) {
 
 let quizPage = document.querySelector('.quiz-page');
 if (quizPage) {
-
-    let flkty          = new Flickity('.carousel');
-        nextButton     = document.querySelector('.slider__buttons-next');
-        previousButton = document.querySelector('.slider__buttons-previous');
-    nextButton.addEventListener('click', function() {
-        flkty.next(true);
-    });
-    previousButton.addEventListener('click', function() {
-        flkty.previous(true);
-    });
 
     let infoBtn   = document.querySelector('.quiz__information-block-button');
         infoBlock = document.querySelector('.quiz__information');
@@ -70,24 +60,7 @@ if (quizPage) {
         setBarProgress(formPb, '50%', '75%');
     });
 
-    let selectGenreBtn = document.querySelector('.quiz__form-button');
-        slider         = document.querySelector('.slider');
-        resultsBlock   = document.querySelector('.quiz__results');
-        resPb          = document.querySelector('.quiz__results-bar-progress');
-        carousel       = document.querySelector('.carousel');
-        carouselFlkty  = new Flickity(carousel);
-    selectGenreBtn.addEventListener('click', function () {
-        formBlock.style.display = 'none';
-        setFormTransition(formBlock);
-        resultsBlock.style.display = 'block';
-        setFormTransition(resultsBlock);
-        slider.style.display = 'block';
-        setFormTransition(slider);
-        carouselFlkty.resize();
-        setBarProgress(resPb, '75%', '100%');
-    });
-
-    // first (info) quiz page pb animation
+    // First (info) quiz page pb animation.
     let infoPb = document.querySelector('.quiz__information-bar-progress');
     setBarProgress(infoPb, '0%', '25%');
 
@@ -100,4 +73,101 @@ if (quizPage) {
     restartBtn.addEventListener('click', function () {
         location.replace('./quiz.html');
     });
+}
+
+// Step selecting TV series or Film.
+let quizTypeButtons = document.querySelectorAll('.quiz__type-select');
+let selectedType = null;
+
+quizTypeButtons.forEach(function (quizTypeButton) {
+    quizTypeButton.addEventListener('click', function(e) {
+        selectedType = this.getAttribute('data-type');
+    });
+});
+
+// Selecting genres.
+let quizForm = document.querySelector('.quiz__form');
+let selectedGenres = [];
+
+quizForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get all selected genres.
+    const quizGenres = document.querySelectorAll('.quiz__form-block-answer-checkbox:checked');
+    
+    selectedGenres = [];
+    quizGenres.forEach(quizGenre => {
+        selectedGenres.push(quizGenre.value);
+    });
+
+    console.log(selectedType, selectedGenres)
+    
+    // Send ajax request with current data.
+    $.ajax({
+        type: 'GET',
+        url: 'app.php',
+        data: {
+            type: selectedType,
+            genres: selectedGenres,
+        },
+        dataType : 'json',
+        success: onFilmSubmitSuccess,
+        error: onFilmSubmitError
+    });
+});
+
+
+function onFilmSubmitSuccess(response) {
+    console.log('Success');
+    console.log(response);
+
+    let sliderContent = '';
+    response.forEach(function(movie) {
+        sliderContent +=`<div class="carousel-cell">`;
+            sliderContent +=`<div class="slider__bg"></div>`;
+            sliderContent +=`<img class="slider__img" src="./img/films/${movie.Background}" alt="${movie.Background}">`;
+            sliderContent +=`<div class="slider__item">`;
+                sliderContent +=`<h3 class="slider__item-film-name">${movie.Name}</h3>`;
+                sliderContent +=`<span class="slider__item-film-date">${movie.Years}</span>`;
+                sliderContent +=`<span class="slider__item-film-duration">${movie.Time}</span>`;
+                sliderContent +=`<p class="slider__item-film_rating">${movie.Rating} imdb</p>`;
+                sliderContent +=`<p class="slider__item-film-description">${movie.Description}</p>`;
+            sliderContent +=`</div>`;
+        sliderContent +=`</div>`;
+    });
+    console.log(sliderContent);
+
+    let resultsBlock   = document.querySelector('.quiz__results');
+    let slider         = document.querySelector('.slider');
+    let carousel       = document.querySelector('.carousel');
+    carousel.innerHTML = sliderContent;
+
+    let carouselFlkty  = new Flickity(carousel);
+    let resPb          = document.querySelector('.quiz__results-bar-progress');
+
+    let nextButton     = document.querySelector('.slider__buttons-next');
+    let previousButton = document.querySelector('.slider__buttons-previous');
+    
+    nextButton.addEventListener('click', function() {
+        carouselFlkty.next(true);
+    });
+
+    previousButton.addEventListener('click', function() {
+        carouselFlkty.previous(true);
+    });
+
+    quizForm.style.display = 'none';
+    setFormTransition(formBlock);
+    
+    resultsBlock.style.display = 'block';
+    setFormTransition(resultsBlock);
+    slider.style.display = 'block';
+    setFormTransition(slider);
+    carouselFlkty.resize();
+    setBarProgress(resPb, '75%', '100%');
+}
+
+function onFilmSubmitError(xhr) {
+    console.log('error');
+    console.log(xhr.responseText);
 }

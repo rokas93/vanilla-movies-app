@@ -87,11 +87,11 @@
                 <div class="quiz__type-bar">
                     <div class="quiz__type-bar-progress"></div>
                 </div>
-                <div class="quiz__type-select" type="radio" id="select-film">
+                <div class="quiz__type-select" id="select-film" data-type="film">
                     <img src="./img/popcorn.png" alt="popcorn.png">
                     <span class="quiz__type-select-span">Today is film night!</span>
                 </div>
-                <div class="quiz__type-select" type="radio" id="select-tv">
+                <div class="quiz__type-select" id="select-tv" data-type="tv">
                     <img src="./img/dogy.png" alt="dogy.png">
                     <span class="quiz__type-select-span">My doggy wants TV show!</span>
                 </div>
@@ -106,39 +106,39 @@
                 </div>
                 <div class="quiz__form-block">
                     <label class="quiz__form-block-answer" for="gaction">Action
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="1" id="gaction">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="action" id="gaction">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gcomedy">Drama
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="2" id="gcomedy">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="comedy" id="gcomedy">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gdrama">Crime
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="3" id="gdrama">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="drama" id="gdrama">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gfantasy">Thriller
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="4" id="gfantasy">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="fantasy" id="gfantasy">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="ghorror">Adventure
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="5" id="ghorror">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="horror" id="ghorror">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gmystery">Mystery
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="6" id="gmystery">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="mystery" id="gmystery">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gromance">Mystery
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="7" id="gromance">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="romance" id="gromance">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                     <label class="quiz__form-block-answer" for="gthriller">Romance
-                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="8" id="gthriller">
+                        <input class="quiz__form-block-answer-checkbox" type="checkbox" value="thriller" id="gthriller">
                         <span class="quiz__form-block-answer-checkmark">&#10003;</span>
                     </label>
                 </div>
-                <button class="quiz__form-button" type="button">Next</button>
+                <button class="quiz__form-button" type="submit">Next</button>
             </form>
 
             <!-- quiz results -->
@@ -151,7 +151,7 @@
             </div>
         </div>
         <div class="slider">
-            <div class="carousel" data-flickity>
+            <div class="carousel">
                 <div class="carousel-cell">
                     <div class="slider__bg"></div>
                     <img class="slider__img" src="./img/films/showshank.jpg" alt="showshank.jpg">
