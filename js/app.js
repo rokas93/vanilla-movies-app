@@ -1,4 +1,4 @@
-// Set progress.
+// Set progress
 function setBarProgress(selector, min, max) {
     selector.animate([
         {width: min},
@@ -10,7 +10,7 @@ function setBarProgress(selector, min, max) {
     });
 }
 
-// Quiz form fade in.
+// Quiz form fade in
 function setFormTransition(selector) {
     selector.animate(
         {opacity: 1}, 
@@ -32,9 +32,9 @@ let quizPage = document.querySelector('.quiz-page');
 if (quizPage) {
 
     let infoBtn   = document.querySelector('.quiz__information-block-button');
-        infoBlock = document.querySelector('.quiz__information');
-        typeBlock = document.querySelector('.quiz__type');
-        typePb    = document.querySelector('.quiz__type-bar-progress');
+    let infoBlock = document.querySelector('.quiz__information');
+    let typeBlock = document.querySelector('.quiz__type');
+    let typePb    = document.querySelector('.quiz__type-bar-progress');
     infoBtn.addEventListener('click', function() {
         infoBlock.style.display = 'none';
         setFormTransition(typeBlock);
@@ -43,8 +43,8 @@ if (quizPage) {
     });
 
     let selectFilmBtn = document.querySelector('#select-film');
-        formBlock     = document.querySelector('.quiz__form');
-        formPb        = document.querySelector('.quiz__form-bar-progress');
+    let formBlock     = document.querySelector('.quiz__form');
+    let formPb        = document.querySelector('.quiz__form-bar-progress');
     selectFilmBtn.addEventListener('click', function() {
         typeBlock.style.display = 'none';
         setFormTransition(formBlock);
@@ -60,7 +60,7 @@ if (quizPage) {
         setBarProgress(formPb, '50%', '75%');
     });
 
-    // First (info) quiz page pb animation.
+    // First (info) quiz page pb animation
     let infoPb = document.querySelector('.quiz__information-bar-progress');
     setBarProgress(infoPb, '0%', '25%');
 
@@ -75,7 +75,7 @@ if (quizPage) {
     });
 }
 
-// Step selecting TV series or Film.
+// Step selecting TV series or Film
 let quizTypeButtons = document.querySelectorAll('.quiz__type-select');
 let selectedType = null;
 
@@ -85,14 +85,14 @@ quizTypeButtons.forEach(function (quizTypeButton) {
     });
 });
 
-// Selecting genres.
+// Selecting genres
 let quizForm = document.querySelector('.quiz__form');
 let selectedGenres = [];
 
 quizForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Get all selected genres.
+    // Get all selected genres
     const quizGenres = document.querySelectorAll('.quiz__form-block-answer-checkbox:checked');
     
     selectedGenres = [];
@@ -100,9 +100,9 @@ quizForm.addEventListener('submit', function(e) {
         selectedGenres.push(quizGenre.value);
     });
 
-    console.log(selectedType, selectedGenres)
+    // console.log(selectedType, selectedGenres);
     
-    // Send ajax request with current data.
+    // Send ajax request with current data
     $.ajax({
         type: 'GET',
         url: 'app.php',
@@ -118,8 +118,8 @@ quizForm.addEventListener('submit', function(e) {
 
 
 function onFilmSubmitSuccess(response) {
-    console.log('Success');
-    console.log(response);
+    // console.log('Success');
+    // console.log(response);
 
     let sliderContent = '';
     response.forEach(function(movie) {
@@ -135,7 +135,7 @@ function onFilmSubmitSuccess(response) {
             sliderContent +=`</div>`;
         sliderContent +=`</div>`;
     });
-    console.log(sliderContent);
+    // console.log(sliderContent);
 
     let resultsBlock   = document.querySelector('.quiz__results');
     let slider         = document.querySelector('.slider');
@@ -156,6 +156,7 @@ function onFilmSubmitSuccess(response) {
         carouselFlkty.previous(true);
     });
 
+    let formBlock = document.querySelector('.quiz__form');
     quizForm.style.display = 'none';
     setFormTransition(formBlock);
     
