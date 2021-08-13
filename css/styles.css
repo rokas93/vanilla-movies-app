@@ -104,7 +104,7 @@ header, .quiz {
   transition: opacity .5s;
   border: none;
   border-radius: 4px;
-  padding: 15px 32px;
+  padding: 20px 32px;
   -webkit-box-shadow: 0px 2px 20px #0000002E;
           box-shadow: 0px 2px 20px #0000002E;
   color: #FFFFFF;
