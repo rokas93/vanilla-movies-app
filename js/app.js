@@ -73,48 +73,49 @@ if (quizPage) {
     restartBtn.addEventListener('click', function () {
         location.replace('./quiz.html');
     });
+
+
+    // Step selecting TV series or Film
+    let quizTypeButtons = document.querySelectorAll('.quiz__type-select');
+    let selectedType = null;
+
+    quizTypeButtons.forEach(function (quizTypeButton) {
+        quizTypeButton.addEventListener('click', function(e) {
+            selectedType = this.getAttribute('data-type');
+        });
+    });
+
+    // Selecting genres
+    let quizForm = document.querySelector('.quiz__form');
+    let selectedGenres = [];
+
+    quizForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Get all selected genres
+        const quizGenres = document.querySelectorAll('.quiz__form-block-answer-checkbox:checked');
+        
+        selectedGenres = [];
+        quizGenres.forEach(quizGenre => {
+            selectedGenres.push(quizGenre.value);
+        });
+
+        // console.log(selectedType, selectedGenres);
+        
+        // Send ajax request with current data
+        $.ajax({
+            type: 'GET',
+            url: 'app.php',
+            data: {
+                type: selectedType,
+                genres: selectedGenres,
+            },
+            dataType : 'json',
+            success: onFilmSubmitSuccess,
+            error: onFilmSubmitError
+        });
+    });
 }
-
-// Step selecting TV series or Film
-let quizTypeButtons = document.querySelectorAll('.quiz__type-select');
-let selectedType = null;
-
-quizTypeButtons.forEach(function (quizTypeButton) {
-    quizTypeButton.addEventListener('click', function(e) {
-        selectedType = this.getAttribute('data-type');
-    });
-});
-
-// Selecting genres
-let quizForm = document.querySelector('.quiz__form');
-let selectedGenres = [];
-
-quizForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Get all selected genres
-    const quizGenres = document.querySelectorAll('.quiz__form-block-answer-checkbox:checked');
-    
-    selectedGenres = [];
-    quizGenres.forEach(quizGenre => {
-        selectedGenres.push(quizGenre.value);
-    });
-
-    // console.log(selectedType, selectedGenres);
-    
-    // Send ajax request with current data
-    $.ajax({
-        type: 'GET',
-        url: 'app.php',
-        data: {
-            type: selectedType,
-            genres: selectedGenres,
-        },
-        dataType : 'json',
-        success: onFilmSubmitSuccess,
-        error: onFilmSubmitError
-    });
-});
 
 
 function onFilmSubmitSuccess(response) {
@@ -157,6 +158,7 @@ function onFilmSubmitSuccess(response) {
     });
 
     let formBlock = document.querySelector('.quiz__form');
+    let quizForm = document.querySelector('.quiz__form');
     quizForm.style.display = 'none';
     setFormTransition(formBlock);
     
