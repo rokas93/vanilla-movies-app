@@ -33,7 +33,7 @@ $questionmarks = str_repeat("?,", count($genres)-1) . "?";
 $query = $db->prepare(
     "SELECT `Genre_ID` 
     FROM `genre` 
-    WHERE LOWER(`Genre`) 
+    WHERE `genre` 
     IN ($questionmarks)"
 );
 
