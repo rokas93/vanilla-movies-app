@@ -126,13 +126,13 @@ function onFilmSubmitSuccess(response) {
     response.forEach(function(movie) {
         sliderContent +=`<div class="carousel-cell">`;
             sliderContent +=`<div class="slider__bg"></div>`;
-            sliderContent +=`<img class="slider__img" src="./img/films/${movie.Background}" alt="${movie.Background}">`;
+            sliderContent +=`<img class="slider__img" src="./img/films/${movie.background}" alt="${movie.background}">`;
             sliderContent +=`<div class="slider__item">`;
-                sliderContent +=`<h3 class="slider__item-film-name">${movie.Name}</h3>`;
-                sliderContent +=`<span class="slider__item-film-date">${movie.Years}</span>`;
-                sliderContent +=`<span class="slider__item-film-duration">${movie.Time}</span>`;
-                sliderContent +=`<p class="slider__item-film_rating">${movie.Rating} imdb</p>`;
-                sliderContent +=`<p class="slider__item-film-description">${movie.Description}</p>`;
+                sliderContent +=`<h3 class="slider__item-film-name">${movie.name}</h3>`;
+                sliderContent +=`<span class="slider__item-film-date">${movie.years}</span>`;
+                sliderContent +=`<span class="slider__item-film-duration">${movie.time}</span>`;
+                sliderContent +=`<p class="slider__item-film_rating">${movie.rating} imdb</p>`;
+                sliderContent +=`<p class="slider__item-film-description">${movie.description}</p>`;
             sliderContent +=`</div>`;
         sliderContent +=`</div>`;
     });

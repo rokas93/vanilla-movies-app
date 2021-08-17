@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2021 at 06:15 PM
+-- Generation Time: Aug 17, 2021 at 12:41 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `genre` (
-  `Genre_ID` int(2) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
+  `genre_id` int(11) UNSIGNED NOT NULL,
   `genre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,15 +37,15 @@ CREATE TABLE `genre` (
 -- Dumping data for table `genre`
 --
 
-INSERT INTO `genre` (`Genre_ID`, `genre`) VALUES
-(1, 'Action'),
-(2, 'Drama'),
-(3, 'Crime'),
-(4, 'Thriller'),
-(5, 'Adventure'),
-(6, 'Mystery'),
-(7, 'Comedy'),
-(8, 'Romance');
+INSERT INTO `genre` (`id`, `genre_id`, `genre`) VALUES
+(1, 1, 'Action'),
+(2, 2, 'Drama'),
+(3, 3, 'Crime'),
+(4, 4, 'Thriller'),
+(5, 5, 'Adventure'),
+(6, 6, 'Mystery'),
+(7, 7, 'Comedy'),
+(8, 8, 'Romance');
 
 -- --------------------------------------------------------
 
@@ -53,22 +54,22 @@ INSERT INTO `genre` (`Genre_ID`, `genre`) VALUES
 --
 
 CREATE TABLE `moviedb` (
-  `ID` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Type_ID` int(2) UNSIGNED NOT NULL,
-  `Genre_ID` int(2) UNSIGNED NOT NULL,
-  `Years` year(4) NOT NULL,
-  `Time` varchar(10) NOT NULL,
-  `Rating` decimal(2,1) NOT NULL,
-  `Description` text NOT NULL,
-  `Background` varchar(30) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `type_id` int(2) UNSIGNED NOT NULL,
+  `genre_id` int(2) UNSIGNED NOT NULL,
+  `years` year(4) NOT NULL,
+  `time` varchar(10) NOT NULL,
+  `rating` decimal(2,1) NOT NULL,
+  `description` text NOT NULL,
+  `background` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `moviedb`
 --
 
-INSERT INTO `moviedb` (`ID`, `Name`, `Type_ID`, `Genre_ID`, `Years`, `Time`, `Rating`, `Description`, `Background`) VALUES
+INSERT INTO `moviedb` (`id`, `name`, `type_id`, `genre_id`, `years`, `time`, `rating`, `description`, `background`) VALUES
 (1, 'The Dark Knight', 1, 1, 2008, '2h 32min', '9.0', 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', 'knight.jpg'),
 (2, 'The Shawshank Redemption', 1, 2, 1994, '2h 22min', '9.3', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 'showshank.jpg'),
 (3, 'The Godfather', 1, 3, 1972, '2h 55min', '9.2', 'An organized crime dynasty\'s aging patriarch transfers control of his clandestine empire to his reluctant son.', 'godfather.jpg'),
@@ -171,18 +172,18 @@ INSERT INTO `moviedb` (`ID`, `Name`, `Type_ID`, `Genre_ID`, `Years`, `Time`, `Ra
 --
 
 CREATE TABLE `type` (
-  `Type_ID` int(2) UNSIGNED NOT NULL,
-  `Type` varchar(30) NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `type_id` int(11) UNSIGNED NOT NULL,
+  `type` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `type`
 --
 
-INSERT INTO `type` (`Type_ID`, `Type`, `id`) VALUES
-(1, 'film', 1),
-(2, 'tv', 2);
+INSERT INTO `type` (`id`, `type_id`, `type`) VALUES
+(1, 1, 'film'),
+(2, 2, 'tv');
 
 --
 -- Indexes for dumped tables
@@ -192,32 +193,39 @@ INSERT INTO `type` (`Type_ID`, `Type`, `id`) VALUES
 -- Indexes for table `genre`
 --
 ALTER TABLE `genre`
-  ADD KEY `ID` (`Genre_ID`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ID` (`genre_id`);
 
 --
 -- Indexes for table `moviedb`
 --
 ALTER TABLE `moviedb`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `Type ID` (`Type_ID`,`Genre_ID`),
-  ADD KEY `Genre ID` (`Genre_ID`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Type ID` (`type_id`,`genre_id`),
+  ADD KEY `Genre ID` (`genre_id`);
 
 --
 -- Indexes for table `type`
 --
 ALTER TABLE `type`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Type_ID` (`Type_ID`) USING BTREE;
+  ADD KEY `Type_ID` (`type_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `genre`
+--
+ALTER TABLE `genre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `moviedb`
 --
 ALTER TABLE `moviedb`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `type`

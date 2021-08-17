@@ -17,21 +17,21 @@ try {
 $type = $_GET['type'];
 
 $query = $db->prepare(
-    "SELECT `Type_ID` 
+    "SELECT `type_id` 
     FROM `type` 
-    WHERE `Type` = ?"
+    WHERE `type` = ?"
 );
 
 $query->execute([$type]);
 $typeId = $query->fetchAll(PDO::FETCH_ASSOC);
-$typeId = array_column($typeId, 'Type_ID');
+$typeId = array_column($typeId, 'type_id');
 
 // Fetch genre id
 $genres = $_GET['genres'];
 $questionmarks = str_repeat("?,", count($genres)-1) . "?";
 
 $query = $db->prepare(
-    "SELECT `Genre_ID` 
+    "SELECT `genre_id` 
     FROM `genre` 
     WHERE `genre` 
     IN ($questionmarks)"
@@ -39,7 +39,7 @@ $query = $db->prepare(
 
 $query->execute($genres);
 $genreIds = $query->fetchAll(PDO::FETCH_ASSOC);
-$genreIds = array_column($genreIds, 'Genre_ID');
+$genreIds = array_column($genreIds, 'genre_id');
 
 // Fetch data from movies table.
 $questionmarks = str_repeat("?,", count($genreIds)-1) . "?";
@@ -47,8 +47,8 @@ $questionmarks = str_repeat("?,", count($genreIds)-1) . "?";
 $query = $db->prepare(
     "SELECT * 
     FROM `moviedb` 
-    WHERE `Type_ID` = ? 
-    AND `Genre_ID` 
+    WHERE `type_id` = ? 
+    AND `genre_id` 
     IN ($questionmarks) 
     ORDER BY RAND() 
     LIMIT 5"
